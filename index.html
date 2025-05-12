@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avaliação - Polícia Fivem</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Avaliação de Instrutor - Polícia Civil</h1>
+
+    <form id="evaluationForm">
+      <div class="top-fields">
+        <label>QRA do Testado:<input type="text" id="qraTestado" required /></label>
+        <label>ID do Testado:<input type="text" id="idTestado" required pattern="[0-9]+" /></label>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Curso</th>
+            <th>Avaliação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Patrulhamento</td>
+            <td><button type="button" onclick="abrirModal('patrulhamento')">Avaliar</button></td>
+          </tr>
+          <tr>
+            <td>Abordagem</td>
+            <td><button type="button" onclick="abrirModal('abordagem')">Avaliar</button></td>
+          </tr>
+          <tr>
+            <td>Acompanhamento</td>
+            <td><button type="button" onclick="abrirModal('acompanhamento')">Avaliar</button></td>
+          </tr>
+          <tr>
+            <td>Modulação</td>
+            <td><button type="button" onclick="abrirModal('modulacao')">Avaliar</button></td>
+          </tr>
+          <tr>
+            <td>Prisional</td>
+            <td><button type="button" onclick="abrirModal('prisional')">Avaliar</button></td>
+          </tr>
+          <tr>
+            <td>Conduta</td>
+            <td><button type="button" onclick="abrirModal('conduta')">Avaliar</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <label for="comentario">Comentários:</label>
+      <textarea id="comentario" required></textarea>
+
+      <div class="instrutor-fields">
+        <label>Nome do Instrutor:<input type="text" id="instrutorNome" required /></label>
+        <label>ID do Instrutor:<input type="text" id="instrutorId" required pattern="[0-9]+" /></label>
+      </div>
+
+      <button type="submit" id="submitButton" class="amarelo">Enviar</button>
+      <p id="mensagem" class="mensagem"></p>
+    </form>
+  </div>
+
+  <!-- Modal e overlay -->
+  <div id="overlay" class="overlay" style="display: none;"></div>
+  <div id="modal" class="modal" style="display: none;">
+    <h2 id="modalTitulo">Curso</h2>
+    <form id="modalForm">
+      <div class="pergunta">
+        <label for="p1">1. Pergunta</label>
+        <select required name="p1">
+          <option value="">-</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+          <option value="Já Tem">Já Tem</option>
+        </select>
+      </div>
+      <div class="pergunta">
+        <label for="p2">2. Pergunta</label>
+        <select required name="p2">
+          <option value="">-</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+          <option value="Já Tem">Já Tem</option>
+        </select>
+      </div>
+      <div class="pergunta">
+        <label for="p3">3. Pergunta</label>
+        <select required name="p3">
+          <option value="">-</option>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+          <option value="Já Tem">Já Tem</option>
+        </select>
+      </div>
+
+      <!-- Comentário exibido após escolha -->
+      <div id="comentarioResposta" style="display: none;">
+        <p id="comentarioTexto"></p>
+        <button type="button" onclick="fecharComentario()">OK</button>
+      </div>
+
+      <button type="submit">Salvar Avaliação</button>
+      <button type="button" onclick="fecharModal()">Cancelar</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
