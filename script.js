@@ -257,7 +257,7 @@ Testado: ${dados.qraTestado} | ID: ${dados.idTestado}
 Instrutor: ${dados.instrutorNome} | ID: ${dados.instrutorId}
 Cursos:
 ${Object.entries(dados.cursos).map(([curso, status]) => `- ${curso}: ${status}`).join("\n")}
-Resultado Final: ${aprovadoGeral ? "✅ Aprovado" : "❌ Reprovado"}`
+`
   };
 
   try {
