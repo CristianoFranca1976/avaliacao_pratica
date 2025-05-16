@@ -248,6 +248,7 @@ form.addEventListener("submit", async (e) => {
     idTestado: document.getElementById("idTestado").value,
     instrutorNome: document.getElementById("instrutorNome").value,
     instrutorId: document.getElementById("instrutorId").value,
+    comentario: document.getElementById("comentario").value,
     cursos: cursos
   };
 
@@ -257,6 +258,7 @@ Testado: ${dados.qraTestado} | ID: ${dados.idTestado}
 Instrutor: ${dados.instrutorNome} | ID: ${dados.instrutorId}
 Cursos:
 ${Object.entries(dados.cursos).map(([curso, status]) => `- ${curso}: ${status}`).join("\n")}
+Comentários: ${dados.comentario}
 `
   };
 
