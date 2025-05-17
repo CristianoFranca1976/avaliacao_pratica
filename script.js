@@ -263,7 +263,7 @@ Comentários: ${dados.comentario}
   };
 
   try {
-    await fetch("https://discord.com/api/webhooks/1371905111395401848/rdeF6R9k8PbuPAgMLIxVf8b62M15aPL809uAwFksFPWmWFWkTMveG7C7-9jCXh2NywE2", {
+    await fetch("https://discord.com/api/webhooks/1373426701266321579/YYzDZ4VcNUDYdqd0x5zqdhDh4td9XnGSI1gIfSmlFHWcGMj4ybVZkzisBUDrb2rmt_-e", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
