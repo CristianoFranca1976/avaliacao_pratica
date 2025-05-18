@@ -260,7 +260,7 @@ form.addEventListener("submit", async (e) => {
   listaCursos.forEach(curso => {
     const respostas = cursosRespostas[curso];
     const reprovado = respostas.includes("Não");
-    cursos[curso.charAt(0).toUpperCase() + curso.slice(1)] = reprovado ? "Reprovado" : "Aprovado";
+    cursos[curso.charAt(0).toUpperCase() + curso.slice(1)] = reprovado ? "Reprovado ❌" : "Aprovado ✅";
     if (reprovado) aprovadoGeral = false;
   });
 
