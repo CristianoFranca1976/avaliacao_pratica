@@ -167,8 +167,29 @@ document.querySelectorAll("#modalForm select").forEach((select, index) => {
 
     document.getElementById("comentarioTexto").textContent = comentario;
     document.getElementById("comentarioResposta").style.display = "block";
+
+    verificarRespostasPreenchidas(curso);
   });
 });
+
+function verificarRespostasPreenchidas(curso) {
+  const selects = document.querySelectorAll("#modalForm select");
+  const todasPreenchidas = [...selects].every(select => select.value !== "");
+
+  cursosRespostas[curso] = todasPreenchidas;
+
+  const botoes = document.querySelectorAll("table button");
+  botoes.forEach(botao => {
+    const onclickValue = botao.getAttribute("onclick");
+    if (onclickValue && onclickValue.includes(`'${curso}'`)) {
+      if (cursosRespostas[curso]) {
+        botao.classList.add("verde");
+      } else {
+        botao.classList.remove("verde");
+      }
+    }
+  });
+}
 
 document.getElementById("modalForm").addEventListener("submit", function(e) {
   e.preventDefault();
