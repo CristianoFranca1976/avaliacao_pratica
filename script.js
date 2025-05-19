@@ -284,7 +284,7 @@ Comentários: ${dados.comentario}
   };
 
   try {
-    await fetch("https://discord.com/api/webhooks/1373734635686854806/xqoCOsiwRpQ-OKpaGHMDPr0QkNMhmyuBh6kJxsOie8hTqxGiNrE41_knLe7wy4q7gvMX", {
+    await fetch("https://avaliacao-pratica.vercel.app/api/sendWebhook", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
